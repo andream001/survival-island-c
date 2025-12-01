@@ -79,12 +79,12 @@ int tower_is_complete(EscapeTower *tower) {
 void tower_display_progress(EscapeTower *tower) {
     if (tower == NULL) return;
     
-    printf("\\n===== PROGRESSO DA TORRE DE FUGA ====="\\n\");
-    printf("Niveis completos: %d/%d\\n\\n", tower->completed_levels, tower->total_levels);
+    printf("\n===== PROGRESSO DA TORRE DE FUGA =====\n");
+    printf("Niveis completos: %d/%d\n\n", tower->completed_levels, tower->total_levels);
     
     for (int i = 0; i < tower->total_levels; i++) {
         TowerLevel *lv = &tower->levels[i];
-        printf("NIVEL %d - %s\\n", lv->level_number, lv->is_complete ? "[COMPLETO]" : "[INCOMPLETO]");
+        printf("NIVEL %d - %s\n", lv->level_number, lv->is_complete ? "[COMPLETO]" : "[INCOMPLETO]");
         
         for (int j = 0; j < lv->component_count; j++) {
             printf("  * %s: %d/%d\\n",
@@ -94,7 +94,7 @@ void tower_display_progress(EscapeTower *tower) {
         }
     }
     
-    printf("======================================\\n\\n");
+    printf("======================================\n\n");
 }
 
 void tower_free(EscapeTower *tower) {
